@@ -1,0 +1,66 @@
+version: '3'
+services:
+  nginxrai:
+    container_name: nginxrai
+    build: ./nginxRai
+    ports:
+      - "80:80"
+    volumes:
+      - store:/usr/share/nginx/html
+
+  mongorai:
+    container_name: mongorai
+    image: "mongo"
+    ports:
+      - '27017:27017'
+    volumes:
+      - './mongodata:/data/db'
+
+  faiss:
+    container_name: faissrai
+    build: ./faiss
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - mongorai
+      - nginxrai
+    ports:
+      - "8000:8000"
+    volumes:
+      - nvidia_driver_384.90:/usr/local/nvidia:ro
+      - ./faiss/webapp/media:/opt/faiss/webapp/media
+    devices:
+      - /dev/nvidia1
+      - /dev/nvidiactl
+      - /dev/nvidia-uvm
+      - /dev/nvidia-uvm-tools
+
+  kfe:
+    container_name: kfe
+    image: 10.58.78.204/visualsearch/kfe:latest
+    volumes:
+      - output-kfe:/usr/src/app/Debug/Resources/Output
+      - ./KFE/videos:/usr/src/app/videos
+    command: ./KFE ../videos
+
+  indexer:  
+    container_name: indexer  
+    build: ./indexer
+    depends_on:
+      - mongorai
+      - faiss
+    volumes:
+      - output-kfe:/home/keras/indexer/input 
+      - store:/home/keras/indexer/store
+      - nvidia_driver_384.90:/usr/local/nvidia:ro
+    devices:
+      - /dev/nvidia0
+      - /dev/nvidiactl
+      - /dev/nvidia-uvm
+      - /dev/nvidia-uvm-tools
+
+volumes:
+  store:
+  output-kfe:
+  nvidia_driver_384.90:
+    external: true 
+
