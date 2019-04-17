@@ -1,0 +1,12 @@
+indexer:  
+  container_name: indexer  
+  build: .
+  volumes:
+    - ./input:/home/keras/indexer/input 
+    - ./output:/home/keras/indexer/store
+    - nvidia_driver_390.116:/usr/local/nvidia:ro
+  devices:
+    - /dev/nvidia0
+    - /dev/nvidiactl
+    - /dev/nvidia-uvm
+    - /dev/nvidia-uvm-tools
