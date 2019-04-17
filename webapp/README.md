@@ -1,4 +1,4 @@
-## Faiss project for Rai 
+## Faiss project for Image search 
 
 Similarity search based on FAISS index.
 
@@ -11,4 +11,4 @@ Search page and add page based on django framework.
 
 - In ordere to use this project you need [FAISS](https://github.com/facebookresearch/faiss)
 - Also [keras](https://keras.io/) and [tensorFlow](https://www.tensorflow.org/install/) are needed
-- A MongoDB instance to store images paths you can use one on 10.58.78.229:27017
+- A MongoDB instance to store images paths 
