@@ -1,0 +1,272 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+/*
+ * Base structure
+ */
+body {
+	width: 100%;
+	background-color: #333;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0,0,0,.5);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+label{
+    font-weight: 600;
+}
+
+.row {
+    margin: 20px 0;
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+/*.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}*/
+
+/*.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}*/
+
+.headings {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.lead {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.models-button {
+    width: 100px;
+    margin: 10px;
+}
+
+.h-divider {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-top: 2px solid;
+    border-top-color: rgba(255,255,255,.25);
+}
+
+.ui-state-hover, .ui-state-active {
+	background: #337ab7 !important;
+    border: #2e6da4 !important;
+}
+
+#urlImage {
+    width: 0;
+    margin: 0;
+    -webkit-transition: width .25s ease-in-out;
+    transition: width .25s ease-in-out;
+}
+
+/*
+ * Header
+ */
+.navbar-default {
+    background-color: inherit;
+    border: none;
+}
+
+.navbar-header {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    width: 100%;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.masthead-nav-placeholder {
+    display:flex;
+    align-items:center;
+    float: right;
+    width: auto;
+    height: 80px;
+    padding: 15px;
+}
+
+.navbar-brand {
+    float: left;
+    width: auto;
+    height: 80px;
+    padding: 15px;
+    /*font-size: 18px;
+    line-height: 20px;
+    */
+}
+
+.navbar-brand img{
+    height: 50px;
+}
+
+.masthead-nav > li {
+  display: inline-block;
+}
+
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+}
+
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255,255,255,.25);
+}
+
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+/*
+ * Cover
+ */
+.cover {
+  /*padding: 0 20px;*/
+  padding: 0;
+}
+
+/*
+ * Footer
+ */
+.mastfoot {
+  color: #999; /* IE8 proofing */
+  color: rgba(255,255,255,.5);
+}
+
+/*
+ * Media
+ */
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+
+  /* Handling float */
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
+
+  .masthead-nav-placeholder {
+    margin-right: -15px;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    /*vertical-align: middle;
+    */
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+
+  /*.cover-container {
+    width: 900px;
+  }*/
+}
+
+.img-thumbnail-without-background-color
+{
+	/*display: inline-block;
+    max-width: 100%;*/
+    height: 100px;
+    margin: 4px;
+}
+
+.bootbox-body
+{
+	color:black;
+}
+
+.modal-footer
+{
+	text-align:center;
+}
+
+.selected_image
+{
+ border:3px solid #337ab7;
+}
+
+.slideshowContainer
+{
+	width: auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	background-color: rgba(255,255,255,.25); 
+	align-items: center;
+	align-content: flex-start;
+	overflow-y: none;
+	overflow-x: auto;
+		
+}
+
+.videoWrapper {
+	width: 100%;
+}

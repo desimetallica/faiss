@@ -1,0 +1,65 @@
+#url {
+	width: 100%;
+}
+
+#rows {
+	width: 50px;
+}
+
+.slider {
+	margin: 0 10px 0 10px;
+}
+
+.respImg {
+	margin: 1%;
+	width: 40%;
+}
+
+#container-header {
+	display: block;
+	margin: 10% 0%;
+	font-family: 'Josefin Sans', sans-serif;
+	color: #1f4fa2;
+	font-size: 1.4em;
+	font-style: normal;
+	font-weight: 800;
+	word-spacing: 0.2em;
+}
+
+#container-logo {
+	height: 100px;
+	padding-left: 0;
+}
+
+#logoTeche {
+	height: auto;
+	margin-right: 5%;
+}
+
+#container-span {
+	height: 100px;
+	padding-right: 0;
+}
+
+#container-header p {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 0;
+	text-align: right;
+}
+
+
+div.form-group label,a {
+	color: #1f4fa2;
+	font-family: 'Lato', sans-serif;
+	word-spacing: 0.2em;
+}
+
+div.form-group label {
+	margin-right: 10px;
+}
+
+.ui-state-hover, .ui-state-active {
+	background: #1f4fa2 !important;
+}

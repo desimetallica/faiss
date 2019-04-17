@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Federico Maria Pandolfi">
+    <link rel="icon" href="img/favicon.gif">
+
+    <title>IACAB web service interface</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/cover.css" rel="stylesheet">
+    <link href="css/dropzone.css" rel="stylesheet">
+    <link href="http://vjs.zencdn.net/5.19.2/video-js.css" rel="stylesheet">
+	<!-- <link href="css/video-js.min.css" rel="stylesheet"> -->
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700|Lato" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+        <div class="site-wrapper-inner">
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="http://www.teche.rai.it/">
+                            <img alt="Brand" src="img/RaiTecheNero.svg">
+                        </a>
+                        <div class="masthead-nav-placeholder">
+                            <ul class="nav masthead-nav">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="models.html">Back-end</a></li>
+                                <li class="active"><a href="videoSearch.html">Video-Search</a></li>
+                                <!--li><a href="#">Contact</a></li-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+			
+            <div class="cover-container">
+                <div class="row">
+                    <h2 class="headings">Submit a new video</h2>
+                    <div class="col-xs-10 col-xs-offset-1" id="uploaderVideo-dropzone">
+                        <label>Submit a new video reference</label>
+                        <!-- N.B. l'url viene cambiato nel file main.js in base alla macchina in cui ci troviamo (localhost oppure una macchina di almaviva) -->
+                        <form action="/IacabProject/uploadVideo" class="dropzone needsclick dz-clickable" id="search-dropzone">
+                            <div class="dz-message needsclick">Drop files here or click to upload</div>
+                        </form>
+                    </div>
+				</div> 
+                    
+                <div class="row">  
+					<div class="col-xs-10 col-xs-offset-1" id="results"></div>
+				
+					<div class="videoContainer col-sm-4 col-sm-offset-1">
+                       	<h2 class="headings">Query video:</h2>
+						<div class="videoWrapper">									
+							<video 
+								id="videoQuery" 
+								class="video-js vjs-default-skin vjs-fluid vjs-16-9" 
+								controls preload="auto" 
+								poster="img/RaiTeche.svg">								  
+							</video>
+						</div>
+						<div id="querySlideshow" class="slideshowContainer"></div>
+					</div>                       						
+
+					<div class="videoContainer col-sm-4 col-sm-offset-2">
+                       	<h2 class="headings">Result video:</h2>																
+					  	<div class="videoWrapper">
+						  	<video 
+								id="playerResult" 
+								class="video-js vjs-default-skin vjs-fluid vjs-16-9" 
+								controls preload="auto" 
+								poster="img/RaiTeche.svg">								  
+						  	</video>   
+						</div>
+					  	<div id="resultSlideshow" class="slideshowContainer"></div>                         											                    
+               		</div>
+               	</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dropzone.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootbox.min.js"></script>
+    <script src="http://vjs.zencdn.net/5.19.2/video.js"></script>
+    <!-- documentation for bootbox is here: http://bootboxjs.com/documentation.html -->
+	
+	<script>
+	var playerResult = null;
+	var player = null;
+	
+	$(document).ready(function() {		
+						
+		initSearchDropzone();		
+		initPlayers();			
+		
+		$("#querySlideshow").scroll(function () {
+		    //$("#resultSlideshow").scrollTop($("#querySlideshow").scrollTop());
+		    $("#resultSlideshow").scrollLeft($("#querySlideshow").scrollLeft());
+		});
+		$("#resultSlideshow").scroll(function () {
+		    //$("#querySlideshow").scrollTop($("#resultSlideshow").scrollTop());
+		    $("#querySlideshow").scrollLeft($("#resultSlideshow").scrollLeft());
+		});
+		
+	});	
+	</script>
+  
+  </body>
+</html>
