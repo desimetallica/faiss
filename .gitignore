@@ -7,6 +7,8 @@
 *.dylib
 *.pyc
 *~
+*.h5
+*.index
 /config.*
 /aclocal.m4
 /autom4te.cache/
@@ -16,3 +18,4 @@
 /c_api/gpu/bin/
 /tests/test
 /tests/gtest/
+/webapp/media/
